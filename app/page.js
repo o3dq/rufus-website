@@ -56,7 +56,7 @@ export default function Home() {
             </nav>
 
             <div className="relative min-h-screen pt-16">
-                <div className="flex flex-col items-center justify-center min-h-screen p-4">
+                <div className="flex flex-col items-center justify-center min-h-screen p-4 gap-12">
                     <div className="container mx-auto flex flex-col items-center justify-between gap-12 mb-16">
                         <div className="p-1 bg-gradient-to-b from-pink-500 to-yellow-500 rounded-lg">
                             <div className="bg-black p-3 rounded-lg">
@@ -98,99 +98,232 @@ export default function Home() {
                                 Download
                             </button>
 
-                            <a href="#" className="border-b-2 border-b-transparent hover:border-b-white duration-200">
+                            <a
+                                href="#"
+                                className="border-b-2 border-b-transparent hover:border-b-white duration-200"
+                            >
                                 View other platforms
                             </a>
                         </div>
                     </div>
-                    <div className="bg-black text-white w-[90%] flex items-center justify-center p-4" id="downloads">
+                    <div
+                        className="bg-black text-white w-[90%] flex items-center justify-center p-4"
+                        id="downloads"
+                    >
                         <div className="max-w-3xl w-full">
                             <h1 className="text-3xl font-bold">Installation</h1>
                             <p className="text-sm text-gray-400 mb-6">
-                                Latest version: v4.6
+                                Latest version: v4.6.0
                             </p>
 
                             <div className="overflow-x-auto">
                                 <table className="min-w-full text-sm">
                                     <thead>
                                         <tr>
-                                            <th className="w-1/3 py-2 px-4 border-r border-[#2E2E2E] text-left"> </th>
-                                            <th className="w-1/3 py-2 px-4 border-t border-r border-[#2E2E2E] text-center">
-                                                64-bit
+                                            <th className="w-1/3 py-2 px-4 border-r border-[#2E2E2E] text-left">
+                                                {" "}
                                             </th>
                                             <th className="w-1/3 py-2 px-4 border-t border-r border-[#2E2E2E] text-center">
-                                                arm64
+                                                Version
+                                            </th>
+                                            <th className="w-1/3 py-2 px-4 border-t border-r border-[#2E2E2E] text-center">
+                                                Size
+                                            </th>
+                                            <th className="w-1/3 py-2 px-4 border-t border-r border-[#2E2E2E] text-center">
+                                                Date
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {[
                                             {
-                                                os: "macOS",
-                                                extension: "app",
-                                                x64: "v3.4.1",
-                                                arm64: "v3.4.1",
+                                                os: "Windows",
+                                                extension: "exe",
+                                                platform: "x64",
+                                                version: "4.6.0",
+                                                size: "1.5 MB",
+                                                date: "2024.10.21",
+                                            },
+                                            {
+                                                os: "Windows Portable",
+                                                extension: "exe",
+                                                platform: "x64",
+                                                version: "4.6.0",
+                                                size: "1.5 MB",
+                                                date: "2024.10.21",
                                             },
                                             {
                                                 os: "Windows",
                                                 extension: "exe",
-                                                x64: "v3.4.1",
-                                                arm64: "N/A",
+                                                platform: "x86",
+                                                version: "4.6.0",
+                                                size: "1.6 MB",
+                                                date: "2024.10.21",
                                             },
                                             {
-                                                os: "Debian",
-                                                extension: "deb",
-                                                x64: "v3.4.1",
-                                                arm64: "v3.4.1",
-                                            },
-                                            {
-                                                os: "Fedora",
-                                                extension: "rpm",
-                                                x64: "v3.4.1",
-                                                arm64: "v3.4.1",
-                                            },
-                                            {
-                                                os: "More Linux distros",
-                                                extension: "AppImage",
-                                                x64: "v3.4.1",
-                                                arm64: "v3.4.1",
+                                                os: "Windows",
+                                                extension: "exe",
+                                                platform: "ARM64",
+                                                version: "4.6.0",
+                                                size: "5.1 MB",
+                                                date: "2024.10.21",
                                             },
                                         ].map((item, idx) => (
-                                            <tr key={idx} className={item.os.includes("Windows") ? "text-teal-300" : "bg-black"}>
+                                            <tr
+                                                key={idx}
+                                                className={"bg-black"}
+                                            >
                                                 <td className="py-3 px-4 border border-[#2E2E2E]">
-                                                    <span className="font-bold">{item.os}</span> (.{item.extension})
+                                                    <span className="font-bold">
+                                                        {item.os}{" "}
+                                                        {item.platform}
+                                                    </span>{" "}
+                                                    (.{item.extension})
+                                                </td>
+                                                <td className="bg-black py-3 px-4 border border-[#2E2E2E] hover:text-teal-300 duration-200 text-center">
+                                                    <a
+                                                        href="#"
+                                                        className="flex items-center justify-center gap-2"
+                                                    >
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            strokeWidth="2"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            className="lucide lucide-download"
+                                                        >
+                                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                                            <polyline points="7 10 12 15 17 10" />
+                                                            <line
+                                                                x1="12"
+                                                                x2="12"
+                                                                y1="15"
+                                                                y2="3"
+                                                            />
+                                                        </svg>{" "}
+                                                        <p>v{item.version}</p>
+                                                    </a>
                                                 </td>
                                                 <td className="py-3 px-4 border border-[#2E2E2E] hover:text-teal-300 duration-200 text-center">
-                                                    {item.x64 !== "N/A" ? (
-                                                        <a
-                                                            href="#"
-                                                            className="flex items-center justify-center"
+                                                    <a
+                                                        href="#"
+                                                        className="flex items-center justify-center gap-2"
+                                                    >
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="lucide lucide-hard-drive"
                                                         >
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>{" "}
-                                                            {item.x64}
-                                                        </a>
-                                                    ) : (
-                                                        <span className="text-gray-400">N/A</span>
-                                                    )}
+                                                            <line
+                                                                x1="22"
+                                                                x2="2"
+                                                                y1="12"
+                                                                y2="12"
+                                                            />
+                                                            <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" />
+                                                            <line
+                                                                x1="6"
+                                                                x2="6.01"
+                                                                y1="16"
+                                                                y2="16"
+                                                            />
+                                                            <line
+                                                                x1="10"
+                                                                x2="10.01"
+                                                                y1="16"
+                                                                y2="16"
+                                                            />
+                                                        </svg>{" "}
+                                                        {item.size}
+                                                    </a>
                                                 </td>
-                                                <td className="py-3 px-4 border border-[#2E2E2E] hover:text-teal-300 duration-200 text-center">
-                                                    {item.arm64 !== "N/A" ? (
-                                                        <a
-                                                            href="#"
-                                                            className="flex items-center justify-center"
+                                                <td className="bg-black py-3 px-4 border border-[#2E2E2E] hover:text-teal-300 duration-200 text-center">
+                                                    <a
+                                                        href="#"
+                                                        className="flex items-center justify-center gap-2"
+                                                    >
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="lucide lucide-calendar"
                                                         >
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>{" "}
-                                                            {item.arm64}
-                                                        </a>
-                                                    ) : (
-                                                        <span className="text-gray-400">N/A</span>
-                                                    )}
+                                                            <path d="M8 2v4" />
+                                                            <path d="M16 2v4" />
+                                                            <rect
+                                                                width="18"
+                                                                height="18"
+                                                                x="3"
+                                                                y="4"
+                                                                rx="2"
+                                                            />
+                                                            <path d="M3 10h18" />
+                                                        </svg>{" "}
+                                                        <p>{item.date}</p>
+                                                    </a>
                                                 </td>
                                             </tr>
                                         ))}
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
+                    </div>
+
+                    <div className="bg-black text-white w-[90%] flex items-center justify-center p-4">
+                        <div className="max-w-3xl w-full flex flex-col gap-8">
+                            <h1 className="text-3xl font-bold">
+                                About Rufus
+                            </h1>
+                            <p className="text-sm text-white/80">
+                            Rufus is a utility that helps format and create bootable USB flash drives, such as USB keys/pendrives, memory sticks, etc. <br/> <br/>
+
+It can be especially useful for cases where: <br/> <br/>
+
+- you need to create USB installation media from bootable ISOs (Windows, Linux, UEFI, etc.) <br/>
+- you need to work on a system that doesn't have an OS installed <br/>
+- you need to flash a BIOS or other firmware from DOS <br/>
+- you want to run a low-level utility <br/>
+Despite its small size, Rufus provides everything you need! <br/> <br/>
+
+A non exhaustive list of Rufus supported ISOs is also provided at the bottom of this page.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div className="bg-black text-white w-[90%] flex items-center justify-center p-4">
+                        <div className="max-w-3xl w-full flex flex-col gap-8">
+                            <h1 className="text-3xl font-bold">
+                                Usage
+                            </h1>
+                            <p className="text-sm text-white/80">
+                            Download the executable and run it – no installation is necessary.<br/><br/>
+
+The executable is digitally signed and the signature should state:<br/><br/>
+
+- <span className="italic">"Akeo Consulting"</span> (v1.3.0 or later)<br/>
+- <span className="italic">"Pete Batard - Open Source Developer"</span> (v1.2.0 or earlier)<br/><br/>
+<span className="font-bold">Notes on DOS support:</span><br/>
+If you create a DOS bootable drive and use a non-US keyboard, Rufus will attempt to select a keyboard layout according to the locale of your system.
+                            </p>
                         </div>
                     </div>
                 </div>
